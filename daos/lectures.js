@@ -1,7 +1,7 @@
 const ObjectId = require('mongodb').ObjectID;
 const client = require('../dbConfig')
 
-const db = client.db('homework7');
+const db = client.db('mycourse');
 const collection = db.collection('Lectures');
 
 function getAll() {
