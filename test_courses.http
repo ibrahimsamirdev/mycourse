@@ -1,0 +1,30 @@
+# Test FIND ALL
+GET http://localhost:3000/courses/
+
+###
+# Test FIND ONE
+GET http://localhost:3000/courses/findOne
+
+###
+# Test Add one Location
+POST http://localhost:3000/courses/add HTTP/2
+content-type: application/json
+
+## location: [longitude, latitude]
+# { "name" : "Fairfield MakerSpace", "category" : "education", "location" : [-91.9724627,41.017674] }
+# { "fullName": "Dany Gamarra", "email": "dhuambo@miu.edu", "password": "123456789", "profilePic": "",
+#     "biography": "Systems Engineer from Cusco", "about": "about ...", "websiteUrl": "www.miu.edu",
+#     "linkedIn": "dgamarrah", "courses" : [{"title" : "MWA", "description" : "Modern Web Application"}],
+#     "enrolled" : [{"title" : "EA", "description" : "Entreprise Architecture"}]
+# }
+
+
+###
+# Create indexes
+GET http://localhost:3000/courses/createIndexes
+
+
+###
+# Test delete element that matches course and lecture
+GET http://localhost:3000/courses/f3n/restaurant HTTP/2
+
