@@ -1,4 +1,6 @@
-const users = [{
+const mongoose = require('mongoose');
+
+const UserSchema = new mongoose.Schema( [{
     fullName: String,
     email: String,
     password: String,
@@ -48,6 +50,7 @@ const users = [{
             ]
         }
     ]
-}]
+}])
 
-module.exports = users;
+// module.exports = users;
+module.exports = mongoose.model('User', UserSchema);
