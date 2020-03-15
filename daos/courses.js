@@ -26,8 +26,9 @@ function getByUserId(userId) {
 
 function getById(courseId) {
     // return collection.findOne({ _id: ObjectId(id) });]\
-    return usersModel.findOne( { 'courses._id' : courseId } )
-        .select( { 'couses' : 1 } );
+    return coursesModel.findById( courseId )
+    // return usersModel.findOne( { 'courses._id' : courseId } )
+    //     .select( { 'courses.$' : 1 } );
 }
 
 // add = async function (req, res, next) {

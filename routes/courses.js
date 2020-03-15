@@ -6,9 +6,9 @@ coursersRouter.get('/', coursesController.getAll);
 
 coursersRouter.get('/byuser/:user_id', coursesController.getByUserId);
 
-coursersRouter.get('/:course_id', coursesController.getById);
+coursersRouter.get('/findOne/:course_id', coursesController.getById);
 
-coursersRouter.post('/add/:user_id',  coursesController.add);
+coursersRouter.post('/add/:user_id', coursesController.add);
 
 coursersRouter.delete('/:id', coursesController.del);
 

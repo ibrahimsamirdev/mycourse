@@ -1,9 +1,16 @@
-// const MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-const uri = 'mongodb+srv://mwaDG:mongo123@cluster0-seryv.gcp.mongodb.net/mycourse?retryWrites=true&w=majority';
+const result = dotenv.config()
+ 
+if (result.error) {
+  throw result.error
+}
+ 
+// console.log(result.parsed)
+
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-seryv.gcp.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 const database = 'mycourse';
-// const client = new MongoClient(uri, { useUnifiedTopology: true });
 
 module.exports.dbConn = async (req, res, next) => {
     // console.log('****************** BEGIN MONGOOSE CONNECTION ************************')

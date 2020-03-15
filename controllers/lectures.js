@@ -5,14 +5,25 @@ const getAll = async (req, res) => {
     res.status(200).send(results);
 }
 
+const getByCourseId = async (req, res) => {
+    const result = await lecturesService.getByCourseId(req, res)
+    res.status(200).send(result);
+}
+
 const getById = async (req, res) => {
     const result = await lecturesService.getById(req.params.id)
     res.status(200).send(result);
 }
 
 const add = async (req, res, next) => {
-    const result = await lecturesService.add(req.body)
-    res.status(200).json(result.ops[0]);
+    try {
+        const result = await lecturesService.add(req, res)
+        // console.dir(result);
+        res.status(200).send(result);}
+    catch (err) {
+        console.log('An error appeared...');
+        throw err;
+    }
 }
 
 const del = async (req, res) => {
@@ -31,4 +42,4 @@ const validateInput = (req, res, next) => {
     }
 }
 
-module.exports = { getAll, getById, add, del, validateInput };
+module.exports = { getAll, getByCourseId, getById, add, del, validateInput };

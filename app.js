@@ -4,14 +4,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const fs = require('fs');
 const logger = require('morgan');
-// const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const lecturesRouter = require('./routes/lectures');
 const coursesRouter = require('./routes/courses');
-// const userModel = require('./models/schema');
 
-// const { dbConn } = require('./middleware/dbConfig');
 const { dbConn } = require('./middleware/mongooseConnect');
 
 const app = express();
@@ -28,31 +25,8 @@ const port = app.get('port');
 
 // Connect to db
 app.use(dbConn);
-// let db;
-// app.use( async (req, res, next) => {
-//   try {
-//       if (!db) {
-//          db = await 
-//          mongoose.connect("mongodb+srv://mwaDG:mongo123@cluster0-seryv.gcp.mongodb.net/mycourse?retryWrites=true&w=majority", { useUnifiedTopology: true })
-//         .then(_ => console.log(`connected successfully to MongoDB Server`))
-//         .catch(err => console.log(err));
-//       }
-//       req.db = db;
-//       next();
-//   } catch (err) {
-//       next(err);
-//   }
-// });
 
 // Define routes
-
-// app.get('/', async (req, res) => {
-//   mongoose.model('users').find(function(err, users) {
-//     res.send(users);
-//     console.log(users);
-//   });
-// });
-
 app.use('/', indexRouter);
 app.use('/lectures', lecturesRouter);
 app.use('/courses', coursesRouter);
