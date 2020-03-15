@@ -1,0 +1,13 @@
+.login-card{
+    margin: auto;
+    margin-top: 40px;
+}
+
+mat-form-field{
+    display: block;
+    width: 80%;
+}
+
+mat-card{
+    width: 40%;
+}
