@@ -14,8 +14,14 @@ const getById = async (req, res) => {
 
 const add = async (req, res, next) => {
     console.log('In ADD controller');
-    const result = await coursesService.add(req)
-    res.status(200).json(result.ops[0]);
+    try {
+        const result = await coursesService.add(req, res)
+        console.dir(result);
+        res.status(200).send(result);}
+    catch (err) {
+        console.log('An error appeared...');
+        throw err;
+    }
 }
 
 const del = async (req, res) => {

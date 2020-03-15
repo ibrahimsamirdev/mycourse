@@ -1,7 +1,7 @@
 const coursesDao = require('../daos/courses')
 
 function getAll(req, res) {
-    console.log('In service');
+    console.log('GETALL service');
     return coursesDao.getAll(req);
 }
 
@@ -10,8 +10,7 @@ function getById(lectureId) {
 }
 
 function add(req) {
-    console.log('In ADD service');
-    console.dir(req.body);
+    console.log('ADD service');
     return coursesDao.add(req);
 }
 
