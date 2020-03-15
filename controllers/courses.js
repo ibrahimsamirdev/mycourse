@@ -3,12 +3,17 @@ const coursesService = require('../services/courses');
 const getAll = async (req, res) => {
     console.log('In controller');
     const result = await coursesService.getAll(req, res);
-    console.dir(result)
+    // console.dir(result)
+    res.status(200).send(result);
+}
+
+const getByUserId = async (req, res) => {
+    const result = await coursesService.getByUserId(req, res)
     res.status(200).send(result);
 }
 
 const getById = async (req, res) => {
-    const result = await coursesService.getById(req.params.id)
+    const result = await coursesService.getById(req, res)
     res.status(200).send(result);
 }
 
@@ -16,7 +21,7 @@ const add = async (req, res, next) => {
     console.log('In ADD controller');
     try {
         const result = await coursesService.add(req, res)
-        console.dir(result);
+        // console.dir(result);
         res.status(200).send(result);}
     catch (err) {
         console.log('An error appeared...');
@@ -40,4 +45,4 @@ const validateInput = (req, res, next) => {
     }
 }
 
-module.exports = { getAll, getById, add, del, validateInput };
+module.exports = { getAll, getByUserId, getById, add, del, validateInput };

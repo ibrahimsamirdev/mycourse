@@ -4,9 +4,11 @@ const coursesController = require('../controllers/courses');
 
 coursersRouter.get('/', coursesController.getAll);
 
-coursersRouter.get('/:id', coursesController.getById);
+coursersRouter.get('/byuser/:user_id', coursesController.getByUserId);
 
-coursersRouter.post('/add',  coursesController.add);
+coursersRouter.get('/:course_id', coursesController.getById);
+
+coursersRouter.post('/add/:user_id',  coursesController.add);
 
 coursersRouter.delete('/:id', coursesController.del);
 

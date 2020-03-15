@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const lectureSchema = mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     title: String,
     description: String,
     video: String,
@@ -9,6 +10,7 @@ const lectureSchema = mongoose.Schema({
 });
 
 const courseSchema = mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     title: String,
     category: String,
     level: String,

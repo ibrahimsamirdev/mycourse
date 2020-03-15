@@ -2,20 +2,28 @@
 GET http://localhost:3000/courses/
 
 ###
-# Test FIND ONE
+# Test FIND BY USER ID
+GET http://localhost:3000/courses/byuser/5e6d2721959ebc15c0909a41
+
+###
+# Test FIND ONE BY ID
 GET http://localhost:3000/courses/findOne
 
 ###
-# Test Add one Location
-POST http://localhost:3000/courses/add HTTP/2
+# Test Add one user
+POST http://localhost:3000/courses/add/5e6d2721959ebc15c0909a41 HTTP/2
 content-type: application/json
 
-{ "fullName": "Julio Gamarra", "email": "julio.gamarra@gmail.com", "password": "qwerty123", "profilePic": "",
-  "biography": "Electronics Engineer", "about": "...about...", "websiteUrl": "www.ucsm.edu.pe", "linkedIn": "julio.gamarra", 
-  "courses" : [{"title" : "WAA", "description" : "Web Application"}],
-  "enrolled" : [{"title" : "MWA", "description" : "Modern Web Application"}]
+{   "title": "MPP", 
+    "category": "modern",
+    "level": "basic",
+    "prerequisites": "none",
+    "image": "",
+    "topic": "java, polymorphisms",
+    "description": "Modern Programming Practices",
+    "published": true,
+    "lectures": []
 }
-
 
 ###
 # Create indexes
@@ -26,3 +34,15 @@ GET http://localhost:3000/courses/createIndexes
 # Test delete element that matches course and lecture
 GET http://localhost:3000/courses/f3n/restaurant HTTP/2
 
+
+
+###
+# # Test Add one user
+# POST http://localhost:3000/courses/add HTTP/2
+# content-type: application/json
+
+# { "fullName": "Julio Gamarra", "email": "julio.gamarra@gmail.com", "password": "qwerty123", "profilePic": "",
+#   "biography": "Electronics Engineer", "about": "...about...", "websiteUrl": "www.ucsm.edu.pe", "linkedIn": "julio.gamarra", 
+#   "courses" : [{"title" : "WAA", "description" : "Web Application"}],
+#   "enrolled" : [{"title" : "MWA", "description" : "Modern Web Application"}]
+# }
