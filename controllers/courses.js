@@ -19,6 +19,15 @@ const getById = async (req, res) => {
 
 const add = async (req, res, next) => {
     console.log('In ADD controller');
+    
+    if (req.body.course) {
+        const course = req.body.course;
+        req.body = JSON.parse(course);
+        if (req.file && req.file.filename) { 
+            req.body.image = req.file.filename; 
+        };
+    }
+
     try {
         const result = await coursesService.add(req, res)
         // console.dir(result);

@@ -29,9 +29,9 @@ app.use(dbConn);
 
 // Define routes
 app.use('/', indexRouter);
-app.use('/lectures', lecturesRouter);
+app.use('/api/lectures', lecturesRouter);
+app.use('/api/courses', coursesRouter);
 app.use('/api/enrolls', enrollsRouter);
-app.use('/courses', coursesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,22 +1,22 @@
 # Test FIND ALL courses
-GET http://localhost:3000/courses/
+GET http://localhost:3000/api/courses/
 
 ###
 # Test FIND all courses BY USER ID
-GET http://localhost:3000/courses/byuser/5e6d2721959ebc15c0909a41
+GET http://localhost:3000/api/courses/byuser/5e6d4fc149864f1094ab8ef0
 
 ###
 # Test FIND ONE course BY ID
-GET http://localhost:3000/courses/findOne/5e6e27aad33e6f2d2810afe9
+GET http://localhost:3000/api/courses/findOne/5e6e27aad33e6f2d2810afe9
 
 ###
 # Test Add one course (to a user)
-POST http://localhost:3000/courses/add/5e6d2721959ebc15c0909a41 HTTP/2
+POST http://localhost:3000/api/courses/add/5e6d4fc149864f1094ab8ef0 HTTP/2
 content-type: application/json
 
-{   "title": "MPP", 
-    "category": "modern",
-    "level": "basic",
+{   "title": "MPP2", 
+    "category": "POSTmodern",
+    "level": "intermediate",
     "prerequisites": "none",
     "image": "",
     "topic": "java, polymorphisms",
@@ -27,18 +27,18 @@ content-type: application/json
 
 ###
 # Create indexes
-GET http://localhost:3000/courses/createIndexes
+GET http://localhost:3000/api/courses/createIndexes
 
 
 ###
 # Test delete element that matches course and lecture
-GET http://localhost:3000/courses/f3n/restaurant HTTP/2
+GET http://localhost:3000/api/courses/f3n/restaurant HTTP/2
 
 
 
 ###
 # # Test Add one user
-# POST http://localhost:3000/courses/add HTTP/2
+# POST http://localhost:3000/api/courses/add HTTP/2
 # content-type: application/json
 
 # { "fullName": "Julio Gamarra", "email": "julio.gamarra@gmail.com", "password": "qwerty123", "profilePic": "",
