@@ -10,4 +10,6 @@ router.post('/:uid', enrolls.validateInput, enrolls.add);
 
 router.delete('/:uid/:id', enrolls.del);
 
+router.patch('/:uid/:cid/:id', enrolls.updateEnrollLecture);
+
 module.exports = router;
