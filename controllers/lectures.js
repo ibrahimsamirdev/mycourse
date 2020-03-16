@@ -16,6 +16,14 @@ const getById = async (req, res) => {
 }
 
 const add = async (req, res, next) => {
+    if (req.body.lecture) {
+        const lecture = req.body.lecture;
+        req.body = JSON.parse(lecture);
+        if (req.file && req.file.filename) { 
+            req.body.video = req.file.filename; 
+        };
+    }
+
     try {
         const result = await lecturesService.add(req, res)
         res.status(200).send(result);}
