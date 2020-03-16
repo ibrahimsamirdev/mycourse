@@ -30,16 +30,3 @@ GET http://localhost:3000/lectures/createIndexes
 ###
 # Test delete element that matches course and lecture
 GET http://localhost:3000/lectures/f3n/restaurant HTTP/2
-
-
-
-###
-# # Test Add one user
-# POST http://localhost:3000/lectures/add HTTP/2
-# content-type: application/json
-
-# { "fullName": "Julio Gamarra", "email": "julio.gamarra@gmail.com", "password": "qwerty123", "profilePic": "",
-#   "biography": "Electronics Engineer", "about": "...about...", "websiteUrl": "www.ucsm.edu.pe", "linkedIn": "julio.gamarra", 
-#   "lectures" : [{"title" : "WAA", "description" : "Web Application"}],
-#   "enrolled" : [{"title" : "MWA", "description" : "Modern Web Application"}]
-# }

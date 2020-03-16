@@ -18,7 +18,6 @@ const getById = async (req, res) => {
 const add = async (req, res, next) => {
     try {
         const result = await lecturesService.add(req, res)
-        // console.dir(result);
         res.status(200).send(result);}
     catch (err) {
         console.log('An error appeared...');
