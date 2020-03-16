@@ -1,0 +1,20 @@
+POST http://localhost:3000/api/lectures/add/5e6e27aad33e6f2d2810afe9 HTTP/2
+Accept: application/json
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="lecture"
+
+{   "title": "Lesson 04", 
+    "description": "VIDEO TEST",
+    "video": "",
+    "resources": "no resources"
+}
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="test_video"; filename="./testFiles/test_video.mp4"
+Content-Type: file
+
+< ./testFiles/test_video.mp4
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+--------------------------------------------------
