@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { SignupComponent } from './signup/signup.component';
+import {HttpClientModule } from "@angular/common/http"
 
 
 
@@ -33,7 +34,8 @@ import { SignupComponent } from './signup/signup.component';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

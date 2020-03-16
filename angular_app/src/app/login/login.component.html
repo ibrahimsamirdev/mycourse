@@ -1,6 +1,6 @@
 <div class="container">
     <mat-card class="login-card"> 
-      <form [formGroup]="form">
+      <form [formGroup]="form" (ngSubmit)="login()">
         <mat-card-header>
           <mat-card-title>Login</mat-card-title>
         </mat-card-header>
@@ -21,6 +21,7 @@
         <mat-card-actions>
           <button mat-button type="submit" color="primary" [disabled]="!form.valid">Login</button>
         </mat-card-actions>
+        <div *ngIf="error" class="error">{{error}}</div>
       </form>
       </mat-card>
 </div>
