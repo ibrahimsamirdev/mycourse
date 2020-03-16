@@ -11,13 +11,18 @@ const getById = async (req, res) => {
 }
 
 const add = async (req, res) => {
-    const result = await enrollsService.add(req.params.uid, req.body)
-    res.status(200).json(result.ops[0]);
+    await enrollsService.add(req.params.uid, req.body)
+    res.status(200).json({ success: 1 });
 }
 
 const del = async (req, res) => {
     await enrollsService.del(req.params.uid, req.params.id)
-    res.status(200).json({ "success": 1 })
+    res.status(200).json({ success: 1 })
+}
+
+const updateEnrollLecture = async (req, res) => {
+    await enrollsService.updateEnrollLecture(req.params.uid, req.params.cid, req.params.id)
+    res.status(200).json({ success: 1 })
 }
 
 const validateInput = (req, res, next) => {
@@ -32,4 +37,4 @@ const validateInput = (req, res, next) => {
     // }
 }
 
-module.exports = { getAll, getById, add, del, validateInput };
+module.exports = { getAll, getById, add, del, updateEnrollLecture, validateInput };
