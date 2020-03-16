@@ -1,23 +1,27 @@
-const lecturesService = require('../services/lectures');
+const coursesService = require('../services/courses');
 
 const getAll = async (req, res) => {
-    const results = await lecturesService.getAll()
-    res.status(200).send(results);
+    console.log('In controller');
+    const result = await coursesService.getAll(req, res);
+    // console.dir(result)
+    res.status(200).send(result);
 }
 
-const getByCourseId = async (req, res) => {
-    const result = await lecturesService.getByCourseId(req, res)
+const getByUserId = async (req, res) => {
+    const result = await coursesService.getByUserId(req, res)
     res.status(200).send(result);
 }
 
 const getById = async (req, res) => {
-    const result = await lecturesService.getById(req.params.id)
+    const result = await coursesService.getById(req, res)
     res.status(200).send(result);
 }
 
 const add = async (req, res, next) => {
+    console.log('In ADD controller');
     try {
-        const result = await lecturesService.add(req, res)
+        const result = await coursesService.add(req, res)
+        // console.dir(result);
         res.status(200).send(result);}
     catch (err) {
         console.log('An error appeared...');
@@ -26,7 +30,7 @@ const add = async (req, res, next) => {
 }
 
 const del = async (req, res) => {
-    await lecturesService.del(req.params.id);
+    await coursesService.del(req.params.id);
     res.status(200).json({ "success": 1 })
 }
 
@@ -41,4 +45,4 @@ const validateInput = (req, res, next) => {
     }
 }
 
-module.exports = { getAll, getByCourseId, getById, add, del, validateInput };
+module.exports = { getAll, getByUserId, getById, add, del, validateInput };

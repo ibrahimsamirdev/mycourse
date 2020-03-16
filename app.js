@@ -1,15 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
 const fs = require('fs');
-var logger = require('morgan');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var lecturesRouter = require('./routes/lectures');
-var enrollsRouter = require('./routes/enrolls');
+const indexRouter = require('./routes/index');
+const lecturesRouter = require('./routes/lectures');
+const coursesRouter = require('./routes/courses');
+const enrollsRouter = require('./routes/enrolls');
 
-var app = express();
+const { dbConn } = require('./middleware/mongooseConnect');
+
+const app = express();
 
 const accessLogStream = fs.createWriteStream('./access.log', { flags: 'a' });
 app.use(logger("combined", { stream: accessLogStream }));
@@ -17,9 +20,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// Set environment
+app.set('port', process.env.PORT || 3000);
+const port = app.get('port');
+
+// Connect to db
+app.use(dbConn);
+
+// Define routes
 app.use('/', indexRouter);
 app.use('/lectures', lecturesRouter);
 app.use('/api/enrolls', enrollsRouter);
+app.use('/courses', coursesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -40,6 +52,7 @@ app.use(function (err, req, res, next) {
   });
 });
 
-app.listen(3000, () => console.log('Listening on 3000'))
+// Launch app
+app.listen(port, () => console.log(`ready on port ${port}`));
 
 module.exports = app;
