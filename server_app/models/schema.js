@@ -1,6 +1,29 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const UserSchema = new mongoose.Schema( [{
+const lectureSchema = mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
+    title: String,
+    description: String,
+    video: String,
+    resources: String,
+    visited: Boolean 
+});
+
+const courseSchema = mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
+    title: String,
+    category: String,
+    level: String,
+    prerequisites: String,
+    image: String,
+    topic: String,
+    description: String,
+    published: Boolean,
+    lectures: [lectureSchema]
+});
+
+const userSchema = mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     fullName: String,
     email: String,
     password: String,
@@ -9,26 +32,7 @@ const UserSchema = new mongoose.Schema( [{
     about: String,
     websiteUrl: String,
     linkedIn: String,
-    courses: [
-        {
-            title: String,
-            category: String,
-            level: String,
-            prerequisites: String,
-            image: String,
-            topic: String,
-            description: String,
-            published: Boolean,
-            lectures: [
-                {
-                    title: String,
-                    description: String,
-                    video: String,
-                    resources: String,
-                }
-            ]
-        }
-    ],
+    courses: [ courseSchema ],
     enrolled: [
         {
             title: String,
@@ -50,6 +54,8 @@ const UserSchema = new mongoose.Schema( [{
             ]
         }
     ]
-}])
+});
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports.lecturesModel = mongoose.model('lectures', lectureSchema);
+module.exports.coursesModel = mongoose.model('courses', courseSchema);
+module.exports.usersModel = mongoose.model('users', userSchema);

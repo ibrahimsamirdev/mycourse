@@ -1,11 +1,9 @@
-const express = require('express');
-const router = express.Router();
-const homeController = require('../controllers/home');
+var express = require('express');
+var router = express.Router();
 
 /* GET home page. */
-
-router.get('/', homeController.getAll);
-router.get('/:catagory', homeController.getByCatagory);
-router.get('/:course_id', homeController.getById);
+router.get('/', function (req, res, next) {
+  res.send("Welcome!")
+});
 
 module.exports = router;
