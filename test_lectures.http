@@ -1,0 +1,32 @@
+# Test FIND ALL lectures
+GET http://localhost:3000/lectures/
+
+###
+# Test FIND all lectures BY course ID
+GET http://localhost:3000/lectures/bycourse/5e6e27aad33e6f2d2810afe9
+# GET http://localhost:3000/lectures/bycourse/5e6dde414b0e032cdc1d17f3
+
+###
+# Test FIND ONE course BY ID
+GET http://localhost:3000/lectures/findOne/5e6e27aad33e6f2d2810afe9
+
+###
+# Test Add one lecture (to a course)
+POST http://localhost:3000/lectures/add/5e6e27aad33e6f2d2810afe9 HTTP/2
+# POST http://localhost:3000/lectures/add/5e6dde414b0e032cdc1d17f3 HTTP/2
+content-type: application/json
+
+{   "title": "Lesson 02", 
+    "description": "Introduction to Functional Programming",
+    "video": "video_uri_2",
+    "resources": "resource_uri_2"
+}
+
+###
+# Create indexes
+GET http://localhost:3000/lectures/createIndexes
+
+
+###
+# Test delete element that matches course and lecture
+GET http://localhost:3000/lectures/f3n/restaurant HTTP/2

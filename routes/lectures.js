@@ -1,13 +1,15 @@
 const express = require('express');
-const router = express.Router();
-const lectures = require('../controllers/lectures')
+const lecturesRouter = express.Router();
+const lecturesController = require('../controllers/lectures')
 
-router.get('/', lectures.getAll);
+lecturesRouter.get('/', lecturesController.getAll);
 
-router.get('/:id', lectures.getById);
+lecturesRouter.get('/bycourse/:course_id', lecturesController.getByCourseId);
 
-router.post('/', lectures.validateInput, lectures.add);
+lecturesRouter.get('/:id', lecturesController.getById);
 
-router.delete('/:id', lectures.del);
+lecturesRouter.post('/add/:course_id', lecturesController.add);
 
-module.exports = router;
+lecturesRouter.delete('/:id', lecturesController.del);
+
+module.exports = lecturesRouter;
