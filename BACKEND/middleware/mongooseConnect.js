@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-
+const MongoClient = require('mongodb').MongoClient;
 // Use dotenv to mask the connection keys
 const result = dotenv.config();
 if (result.error) {
   throw result.error
 }
-
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-seryv.gcp.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-
+// const uri =`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-5spdp.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const uri= `mongodb://127.0.0.1:27017`
 module.exports.dbConn = async (req, res, next) => {
   try {
     if ((mongoose.connection.readyState == 0) && (!mongoose.connection.readyState.db)) {
