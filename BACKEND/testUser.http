@@ -1,0 +1,34 @@
+###
+# Test login
+POST http://localhost:3000/user/login HTTP/2
+content-type: application/json
+
+{ 
+    "email": "Merryhaddis@gmail.com",
+    "password": "1234567"
+}
+###
+# Test signup
+POST http://localhost:3000/user/signup HTTP/2
+content-type: application/json
+
+{   
+    "fullName": "Meron Tesfay",
+    "email": "Merryhaddis@gmail.com",
+    "password": "123456"
+}
+###
+# Test Update user
+POST http://localhost:3000/user/update HTTP/2
+content-type: application/json
+
+{   
+    "fullName": "Meron Tesfay",
+    "email": "Merryhaddis@gmail.com",
+    "password": "1234567",
+    "profilePic": "pic.jpg",
+    "biography": "My bio...",
+    "about": "About me...",
+    "websiteUrl": "www.merry.com",
+    "linkedIn": "MeronTesfay LinkedIn"
+}

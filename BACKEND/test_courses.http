@@ -1,0 +1,48 @@
+# Test FIND ALL courses
+GET http://localhost:3000/api/courses/
+
+###
+# Test FIND all courses BY USER ID
+GET http://localhost:3000/api/courses/byuser/5e6d4fc149864f1094ab8ef0
+
+###
+# Test FIND ONE course BY ID
+GET http://localhost:3000/api/courses/findOne/5e7002bd57942111b40f71e7
+
+###
+# Test Add one course (to a user)
+POST http://localhost:3000/api/courses/add/5e6d4fc149864f1094ab8ef0 HTTP/2
+content-type: application/json
+
+{   "title": "MPP3", 
+    "category": "POSTmodern",
+    "level": "intermediate",
+    "prerequisites": "none",
+    "image": "",
+    "topic": "java, polymorphisms",
+    "description": "Modern Programming Practices",
+    "published": true,
+    "lectures": []
+}
+
+###
+# Create indexes
+GET http://localhost:3000/api/courses/createIndexes
+
+
+###
+# Test delete element that matches course and lecture
+GET http://localhost:3000/api/courses/f3n/restaurant HTTP/2
+
+
+
+###
+# # Test Add one user
+# POST http://localhost:3000/api/courses/add HTTP/2
+# content-type: application/json
+
+# { "fullName": "Julio Gamarra", "email": "julio.gamarra@gmail.com", "password": "qwerty123", "profilePic": "",
+#   "biography": "Electronics Engineer", "about": "...about...", "websiteUrl": "www.ucsm.edu.pe", "linkedIn": "julio.gamarra", 
+#   "courses" : [{"title" : "WAA", "description" : "Web Application"}],
+#   "enrolled" : [{"title" : "MWA", "description" : "Modern Web Application"}]
+# }
