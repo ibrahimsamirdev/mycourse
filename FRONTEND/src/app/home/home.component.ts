@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BackendService, Courses, Course } from '../backend.service';
+import { BackendService, Courses, Course } from '../services/backend.service';
 
 @Component({
   selector: 'app-home',

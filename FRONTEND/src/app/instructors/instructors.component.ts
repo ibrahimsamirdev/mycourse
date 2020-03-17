@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InstructorBackendService } from '../service/instructor-backend.service';
+import { InstructorBackendService } from '../services/instructor-backend.service';
 import {map} from 'rxjs/operators'
 
 // <li *ngFor="let user of courses$ | async; let i=index"> 
