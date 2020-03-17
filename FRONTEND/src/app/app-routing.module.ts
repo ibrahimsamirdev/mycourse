@@ -14,8 +14,8 @@ const routes: Routes = [
   },
   {
     path: "home",
-    component: HomeComponent,
-    canActivate: [AuthGurad],
+    component: HomeComponent
+    // canActivate: [AuthGurad],
   },
   {
     path: "login",

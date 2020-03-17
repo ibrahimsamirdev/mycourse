@@ -37,12 +37,12 @@ export class AuthenticationService {
 }
 
 export interface User {
-  fullName?: String,
-  email?: String,
-  password?: String,
-  profilePic?: String,
-  biography?: String,
-  about?: String,
-  websiteUrl?: String,
-  linkedIn?: String,
+  fullName?: String;
+  email?: String;
+  password?: String;
+  profilePic?: String;
+  biography?: String;
+  about?: String;
+  websiteUrl?: String;
+  linkedIn?: String;
 }

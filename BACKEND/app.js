@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const fs = require('fs');
 const logger = require('morgan');
+const cors = require('cors');
 
 const lecturesRouter = require('./routes/lectures');
 const coursesRouter = require('./routes/courses');
@@ -19,6 +20,7 @@ app.use(logger("combined", { stream: accessLogStream }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors());
 
 // Set environment
 app.set('port', process.env.PORT || 3000);

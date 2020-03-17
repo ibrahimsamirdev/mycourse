@@ -15,4 +15,26 @@ export class BackendService {
     return this.http.post<User>(this.url + 'user/signup', user);
   }
 
+  getCourses(): Observable<Courses[]>{
+    return this.http.get<Courses[]>(this.url + "api/courses");
+  }
+
+}
+
+export interface Courses{
+  id: string;
+  courses: Course[];
+    
+}
+
+export interface Course{
+  title: string;
+  category: string;
+  level: string;
+  prerequisites: string;
+  image: string;
+  topic: string;
+  description: string;
+  published: boolean;
+  lectures: [];
 }
