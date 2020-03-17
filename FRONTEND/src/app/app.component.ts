@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <h1> My Course App </h1>
-    <h2> Instructor use case </h2>
-    <app-instructors> </app-instructors>
+    <h1> {{title}} </h1>
+    <nav><a [routerLink]="['courses']">List of courses</a></nav>
+    <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.css']
 })

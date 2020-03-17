@@ -13,14 +13,17 @@ export class InstructorBackendService {
     let onlineData = this.http.get('http://localhost:3000/api/courses/')
 
     onlineData.subscribe( res => {
-        localStorage.setItem("courses", JSON.stringify(res['results']));
+        localStorage.setItem("courses", JSON.stringify(res));
       }
     );
 
-    // let courses = of(JSON.parse(localStorage.getItem('courses')));
+    let cachedCourses = of(JSON.parse(localStorage.getItem('courses')));
 
-    // console.dir(courses);
+    cachedCourses.subscribe((courses) => {
+        console.log(courses);
+    });
+    // console.dir(cachedCourses);
     
-    return onlineData;
+    return cachedCourses;
   }
 }

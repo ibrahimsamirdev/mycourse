@@ -12,9 +12,9 @@ import {map} from 'rxjs/operators'
   <div> 
   <h2> Online data </h2>
   <ol>
-    <li *ngFor="let course of (courses$ | async).results"> 
-      {{course.title}}
-      {{course.category}}
+    <li *ngFor="let course of courses$ | async; let i=index"> 
+      {{course.courses | json}}
+      {{course._id}}
     </li>
   </ol>
 </div>
@@ -28,9 +28,17 @@ export class InstructorsComponent implements OnInit {
   constructor(private service: InstructorBackendService) { }
 
   ngOnInit() {
+    this.getAllCourses();
+  }
+
+  getAllCourses() {
     console.log('processsing in user component');
-    this.courses$ = this.service.getAllCourses();
-    console.log(this.courses$);
+    this.courses$ =
+     this.service.getAllCourses();
+    // .subscribe((courses) => {
+    //   console.log(courses);
+    // } );
+    // console.dir(this.courses$)
   }
 
 }
