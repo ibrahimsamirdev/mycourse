@@ -17,6 +17,7 @@ const { dbConn } = require('./middleware/mongooseConnect');
 const app = express();
 
 const accessLogStream = fs.createWriteStream('./access.log', { flags: 'a' });
+
 app.use(logger("combined", { stream: accessLogStream }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -11,7 +11,7 @@ Content-Disposition: form-data; name="lecture"
     "resources": "no resources"
 }
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="test_video"; filename="./testFiles/test_video.mp4"
+Content-Disposition: form-data; name="test_video"; filename="../testFiles/test_video.mp4"
 Content-Type: file
 
 < ./testFiles/test_video.mp4

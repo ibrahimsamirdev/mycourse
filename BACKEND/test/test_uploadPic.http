@@ -16,7 +16,7 @@ Content-Disposition: form-data; name="course"
     "lectures": []
 }
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="mongodb_logo"; filename="./testFiles/mongodb_logo.jpg"
+Content-Disposition: form-data; name="mongodb_logo"; filename="../testFiles/mongodb_logo.jpg"
 Content-Type: image/jpeg
 
 < ./testFiles/mongodb_logo.jpg
