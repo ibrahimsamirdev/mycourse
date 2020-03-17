@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const fs = require('fs');
 const logger = require('morgan');
+const cors = require('cors')
 
 const indexRouter = require('./routes/index');
 const lecturesRouter = require('./routes/lectures');
@@ -15,10 +16,12 @@ const { dbConn } = require('./middleware/mongooseConnect');
 const app = express();
 
 const accessLogStream = fs.createWriteStream('./access.log', { flags: 'a' });
+
 app.use(logger("combined", { stream: accessLogStream }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors());
 
 // Set environment
 app.set('port', process.env.PORT || 3000);
