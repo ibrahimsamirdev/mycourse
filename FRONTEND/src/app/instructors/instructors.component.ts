@@ -13,7 +13,7 @@ import {map} from 'rxjs/operators'
   <h2> Online data </h2>
   <ol>
     <li *ngFor="let course of courses$ | async; let i=index"> 
-      {{course.courses | json}}
+      {{ course.courses | json }}
       {{course._id}}
     </li>
   </ol>
