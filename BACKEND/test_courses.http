@@ -14,7 +14,7 @@ GET http://localhost:3000/api/courses/findOne/5e7002bd57942111b40f71e7
 POST http://localhost:3000/api/courses/add/5e6d4fc149864f1094ab8ef0 HTTP/2
 content-type: application/json
 
-{   "title": "MPP2", 
+{   "title": "MPP3", 
     "category": "POSTmodern",
     "level": "intermediate",
     "prerequisites": "none",

@@ -7,6 +7,13 @@ const getAll = async (req, res) => {
     res.status(200).send(result);
 }
 
+const getAllHome = async (req, res) => {
+    console.log('In controller');
+    const result = await coursesService.getAllHome(req, res);
+    // console.dir(result)
+    res.status(200).send(result);
+}
+
 const getByUserId = async (req, res) => {
     const result = await coursesService.getByUserId(req, res)
     res.status(200).send(result);
@@ -54,4 +61,4 @@ const validateInput = (req, res, next) => {
     }
 }
 
-module.exports = { getAll, getByUserId, getById, add, del, validateInput };
+module.exports = { getAll, getAllHome, getByUserId, getById, add, del, validateInput };

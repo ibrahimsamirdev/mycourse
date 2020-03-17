@@ -1,0 +1,68 @@
+<div class="container">
+    <mat-card class="signup-card">
+        <form [formGroup]="form" (ngSubmit)="save()">
+        <mat-card-header>
+            <mat-card-title>Signup</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+                <mat-form-field>
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstNameFormControl">
+                    <mat-error *ngIf="form.controls.firstNameFormControl.invalid">Please Enter First Name</mat-error>
+
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastNameFormControl">
+                    <mat-error *ngIf="form.controls.lastNameFormControl.invalid">Please Enter Last Name</mat-error>
+
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="emailFormControl">
+                    <mat-error *ngIf="form.controls.emailFormControl.invalid">Please Valid Enter Email</mat-error>
+
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="passwordFormControl" type="password" />
+                    <mat-error *ngIf="form.controls.passwordFormControl.invalid">Please Enter Usename</mat-error>
+
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput formControlName="confirmPasswordFormControl" type="password" />
+                    <mat-error *ngIf="form.controls.confirmPasswordFormControl.invalid">Please Enter Usename</mat-error>
+
+                </mat-form-field>
+                <!-- <div>
+                    <mat-label>Profile Picture</mat-label>
+                    <input formControlName="profilePictureNameFormControl" type="file"  accept=".png,.jpeg,.jpg">
+                </div> -->
+                <!-- <mat-form-field>
+                    <mat-label>Biography</mat-label>
+                    <textarea matInput formControlName="bioFormControl"></textarea>
+
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>About</mat-label>
+                    <textarea matInput formControlName="aboutFormControl"></textarea>
+
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Website URL</mat-label>
+                    <input matInput formControlName="websiteFormControl">
+
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>LinkedIn URL</mat-label>
+                    <input matInput formControlName="linkedinFormControl">
+
+                </mat-form-field> -->
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button type="submit" color="primary" [disabled]="!form.valid">Signup</button>
+        </mat-card-actions>
+    </form>
+    </mat-card>
+</div>

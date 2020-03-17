@@ -4,12 +4,13 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const fs = require('fs');
 const logger = require('morgan');
+const cors = require('cors');
 
 const indexRouter = require('./routes/index');
 const lecturesRouter = require('./routes/lectures');
 const coursesRouter = require('./routes/courses');
 const enrollsRouter = require('./routes/enrolls');
-var userRouter = require('./routes/userRouter');
+const userRouter = require('./routes/userRouter');
 
 const { dbConn } = require('./middleware/mongooseConnect');
 
@@ -20,6 +21,7 @@ app.use(logger("combined", { stream: accessLogStream }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors());
 
 // Set environment
 app.set('port', process.env.PORT || 3000);
@@ -29,11 +31,12 @@ const port = app.get('port');
 app.use(dbConn);
 
 // Define routes
+app.use('/', express.static('public'))
 app.use('/', indexRouter);
 app.use('/api/lectures', lecturesRouter);
 app.use('/api/courses', coursesRouter);
 app.use('/api/enrolls', enrollsRouter);
-app.use('/user', userRouter);
+app.use('/api/user', userRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
