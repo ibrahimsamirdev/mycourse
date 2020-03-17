@@ -6,6 +6,7 @@ const getAll = async (req, res) => {
     // console.dir(result)
     res.status(200).send(result);
 }
+
 const getAllHome = async (req, res) => {
     console.log('In controller');
     const result = await coursesService.getAllHome(req, res);
