@@ -1,1 +1,12 @@
-<p>course works!</p>
+<p>course works! , course id : {{id}}</p>
+
+<div style="width: 30%; display:inline-block; border:solid 1px">
+    <ul>
+        <li><a [routerLink]="[1]">lecture 1</a></li>
+        <li><a [routerLink]="[2]">lecture 2</a></li>
+        <li><a [routerLink]="[3]">lecture 3</a></li>
+    </ul>
+</div>
+<div style="width: 69%; display:inline-block; border:solid 1px">
+    <router-outlet></router-outlet>
+</div>

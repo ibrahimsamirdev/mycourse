@@ -7,13 +7,13 @@ import { LecturesComponent } from './lectures/lectures.component';
 import { RouterModule } from '@angular/router';
 
 
-
 @NgModule({
   declarations: [MycoursesComponent, CourseComponent, LectureComponent, LecturesComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
-      { path: '', component: MycoursesComponent }
+      { path: '', component: MycoursesComponent },
+      { path: 'course/:id', component: CourseComponent, children: [{ path: ':lid', component: LecturesComponent }] },
     ])
   ],
   bootstrap: [MycoursesComponent]

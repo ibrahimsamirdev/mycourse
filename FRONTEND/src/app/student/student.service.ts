@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class StudentsService {
 
   constructor() { }
+
+  dosome(val) {
+    // alert("this is :" + val)
+  }
 }

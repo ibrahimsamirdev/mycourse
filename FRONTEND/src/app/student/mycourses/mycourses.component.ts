@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentsService } from '../student.service';
 
 @Component({
   selector: 'app-mycourses',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MycoursesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public studentService: StudentsService) { }
 
   ngOnInit(): void {
+    this.studentService.dosome("Mycourses")
   }
 
 }
