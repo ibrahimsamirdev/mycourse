@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { MatCardModule } from "@angular/material/card";
 
 import { InstructorsComponent } from './instructors.component';
 
@@ -13,6 +14,7 @@ const MY_ROUTES: Routes = [
   declarations: [InstructorsComponent],
   imports: [
     CommonModule,
+    MatCardModule,
     RouterModule.forChild(MY_ROUTES)
   ]
 })
