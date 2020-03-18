@@ -10,7 +10,7 @@ const lecturesRouter = require('./routes/lectures');
 const coursesRouter = require('./routes/courses');
 const enrollsRouter = require('./routes/enrolls');
 const userRouter = require('./routes/userRouter');
-
+const verifyJWT_MW = require('./middleware/jwt-middleware');
 const { dbConn } = require('./middleware/mongooseConnect');
 
 const app = express();
@@ -32,10 +32,10 @@ app.use(dbConn);
 
 // Define routes
 app.use('/', express.static('public'))
-app.use('/', indexRouter);
-app.use('/api/lectures', lecturesRouter);
+app.use('/api/lectures', verifyJWT_MW,lecturesRouter);
 app.use('/api/courses', coursesRouter);
-app.use('/api/enrolls', enrollsRouter);
+app.use('/api/enrolls', verifyJWT_MW, enrollsRouter);
+app.use('/api/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
