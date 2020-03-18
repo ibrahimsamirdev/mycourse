@@ -3,7 +3,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatInputModule } from "@angular/material/input";
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,8 +17,9 @@ import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { SignupComponent } from './signup/signup.component';
 
-const MY_ROUTES : Routes = [
+const MY_ROUTES: Routes = [
   { path: 'courses', loadChildren: () => import('./instructors/instructors.module').then(m => m.InstructorsModule) },
+  { path: 'mycourses', loadChildren: () => import('./student/student.module').then(m => m.StudentModule) }
   // { path: '**', component: FriendlyErrorComponent }
   // { path: 'friendlyError', redirectTo: '/friendlyError' }
 ];
@@ -43,7 +44,7 @@ const MY_ROUTES : Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    RouterModule.forRoot(MY_ROUTES) 
+    RouterModule.forRoot(MY_ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
