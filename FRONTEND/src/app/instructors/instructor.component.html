@@ -6,6 +6,11 @@
             <!-- <img src="../../assets/home.jpg"> -->
         </div>
 </div>
+<div>
+  <mat-toolbar color="primary">
+    <button mat-raised-button color="primary" routerLink="/addCourse">Add Course</button>
+  </mat-toolbar>
+</div>
 <div class="container">
   <div class="row">
       <div class="col-md-4 course-card" *ngFor="let course of coursesToDisplay$">

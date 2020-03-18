@@ -1,44 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { InstructorBackendService, InstructorCourses, Course } from '../services/instructor-backend.service';
-import {map} from 'rxjs/operators'
+import { Router } from '@angular/router';
 
-// <li *ngFor="let user of courses$ | async; let i=index"> 
-//       <a [routerLink]="[i]">{{user.name.first}} {{user.name.last}}</a>
-//     </li>
+import { InstructorBackendService } from '../services/instructor-backend.service';
+import { InstructorCourses, Course } from '../instructors.model';
+
+import {map} from 'rxjs/operators'
 
 @Component({
   selector: 'app-instructors',
   templateUrl: './instructor.component.html',
-//   template: `
-// <div class="container">
-//   <div class="row">
-//       <div class="col-md-4 course-card" *ngFor="let course of coursesToDisplay$">
-//           <mat-card>
-//               <mat-card-header>
-//                 <mat-card-title>{{course.title}}</mat-card-title>
-//               </mat-card-header>
-//               <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-//               <mat-card-content>
-//                 <p>
-//                 {{course.description}}
-//                 </p>
-//               </mat-card-content>
-//               <mat-card-actions>
-//                 <button mat-button>Register</button>
-//               </mat-card-actions>
-//             </mat-card>
-//       </div>
-//   </div>
-// </div>
-//   `,
-styleUrls: ['../home/home.component.css']
+  styleUrls: ['../home/home.component.css']
 })
 export class InstructorsComponent implements OnInit {
 
   public courses$: InstructorCourses[] = [];
   public coursesToDisplay$: Course[] = [];
 
-  constructor(private service: InstructorBackendService) { }
+  constructor(private service: InstructorBackendService, private router: Router) { }
 
   ngOnInit() {
     this.service.getByUserId('5e6d2721959ebc15c0909a41').subscribe(result => {
@@ -55,10 +33,11 @@ export class InstructorsComponent implements OnInit {
     })
   }
 
-  // getAllCourses() {
-  //   console.log('processsing in user component');
-  //   this.courses$ =
-  //    this.service.getAllCourses();
-  // }
+  addInstructorCourse(userId) {
+    this.router.navigate([`/addCourse/${userId}`]);
+  }
 
+  editInstructorCourse(courseId) {
+    this.router.navigate([`/editCourse/${courseId}`]);
+  }
 }

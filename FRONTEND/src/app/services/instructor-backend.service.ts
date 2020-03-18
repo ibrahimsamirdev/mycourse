@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { InstructorCourses } from '../instructors.model';
 import { map, flatMap, mergeMap } from 'rxjs/operators';
 
 @Injectable({
@@ -32,21 +33,4 @@ export class InstructorBackendService {
     
     return cachedUsers;
   }
-}
-
-export interface InstructorCourses{
-  fullName: string;
-  courses: Course[];
-}
-
-export interface Course{
-  title: string;
-  category: string;
-  level: string;
-  prerequisites: string;
-  image: string;
-  topic: string;
-  description: string;
-  published: boolean;
-  lectures: [];
 }
