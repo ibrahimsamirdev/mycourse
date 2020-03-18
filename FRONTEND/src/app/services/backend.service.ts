@@ -8,7 +8,7 @@ import { User } from './authentication.service';
 })
 export class BackendService {
 
-  private url: string = "http://localhost:3000/";
+  private url: string = "http://localhost:3000/api/";
   constructor(private http: HttpClient) { }
 
   createUser(user: User): Observable<User> {
@@ -16,7 +16,7 @@ export class BackendService {
   }
 
   getCourses(): Observable<Courses[]>{
-    return this.http.get<Courses[]>(this.url + "api/courses");
+    return this.http.get<Courses[]>(this.url + "courses");
   }
 
 }
