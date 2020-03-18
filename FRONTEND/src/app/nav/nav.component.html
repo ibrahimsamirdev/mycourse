@@ -10,18 +10,21 @@
       <!-- <li class="nav-item" *ngIf="user">
           <a class="nav-link" routerLink="home" >Home</a>
         </li> -->
-      <li class="nav-item" *ngIf="!user">
-        <a class="nav-link" routerLink="login">Login</a>
-      </li>
-      <li class="nav-item" *ngIf="!user">
-        <a class="nav-link" routerLink="signup">Signup</a>
-      </li>
-      <li class="nav-item" *ngIf="user">
-        <a class="nav-link" (click)="logout()">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['mycourses']">My Courses</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+        <li class="nav-item" *ngIf="!user">
+          <a class="nav-link" routerLink="login">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="!user">
+            <a class="nav-link" routerLink="signup">Signup</a>
+        </li>
+        <li class="nav-item" *ngIf="!user">
+          <a class="nav-link" routerLink="instructor">Instructor</a>
+        </li>
+        <li class="nav-item" *ngIf="user">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['mycourses']">My Courses</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
