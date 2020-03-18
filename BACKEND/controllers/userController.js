@@ -15,7 +15,7 @@ const signup = async (req, res) => {
 
     if (user == null) {
         const result = await userService.add(req.body)
-        res.status(200).send(result.ops[0]);
+        res.status(200).send(result);
     } else {
         res.status(401).send('User already exists!');
     }

@@ -1,19 +1,19 @@
-const client = require('../dbConfig')
-const ObjectId = require('mongodb').ObjectID
-
-const db = client.db('mycourse');
-const collection = db.collection('User');
+const mongoose = require('mongoose');
+const { usersModel, coursesModel, lecturesModel } = require('../models/schema');
 
 function getByEmail(email) {
-    return collection.findOne({ email: email });
+    return usersModel.findOne({ email: email });
 }
 
 function add(user) {
-    return collection.insertOne(user);
+    // return usersModel.insertOne(user);
+    const newUser = new usersModel({ _id: mongoose.Types.ObjectId(), ...user } ) ;
+    newUser.save();
+    return newUser;
 }
 
 function update(id, user) {
-    return collection.updateOne({ _id: ObjectId(id) }, { $set : { password: user.password}});
+    return usersModel.updateOne({ _id: ObjectId(id) }, { $set : { password: user.password}});
 }
 
 module.exports = { getByEmail, add, update }
