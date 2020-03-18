@@ -6,7 +6,6 @@ const fs = require('fs');
 const logger = require('morgan');
 const cors = require('cors');
 
-const indexRouter = require('./routes/index');
 const lecturesRouter = require('./routes/lectures');
 const coursesRouter = require('./routes/courses');
 const enrollsRouter = require('./routes/enrolls');
@@ -37,7 +36,7 @@ app.use('/', indexRouter);
 app.use('/api/lectures', lecturesRouter);
 app.use('/api/courses', coursesRouter);
 app.use('/api/enrolls', enrollsRouter);
-app.use('/api/user', userRouter);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
