@@ -1,25 +1,25 @@
 ###
 # Test login
-POST http://localhost:3000/user/login HTTP/2
+POST http://localhost:3000/api/user/login HTTP/2
 content-type: application/json
 
 { 
-    "email": "Merryhaddis@gmail.com",
+    "email": "mer@gmail.com",
     "password": "1234567"
 }
 ###
 # Test signup
-POST http://localhost:3000/user/signup HTTP/2
+POST http://localhost:3000/api/user/signup HTTP/2
 content-type: application/json
 
 {   
-    "fullName": "Meron Tesfay",
-    "email": "Merryhaddis@gmail.com",
-    "password": "123456"
+    "fullName": "M Tesfay",
+    "email": "mer@gmail.com",
+    "password": "1234567"
 }
 ###
 # Test Update user
-POST http://localhost:3000/user/update HTTP/2
+POST http://localhost:3000/api/user/update HTTP/2
 content-type: application/json
 
 {   

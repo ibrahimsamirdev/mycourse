@@ -8,7 +8,7 @@ import {tap}  from 'rxjs/internal/operators';
 })
 export class AuthenticationService {
 
-  private url: string = "http://localhost:3000/user/";
+  private url: string = "http://localhost:3000/api/user/";
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
