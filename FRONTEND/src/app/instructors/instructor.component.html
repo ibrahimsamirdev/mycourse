@@ -1,0 +1,28 @@
+<div class="home-welcome">   
+        <div class="col-md-6">
+            <div class="welcome-message">INSTRUCTOR COURSES</div>
+        </div>
+        <div class="col-md-6">
+            <!-- <img src="../../assets/home.jpg"> -->
+        </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-4 course-card" *ngFor="let course of coursesToDisplay$">
+          <mat-card>
+              <mat-card-header>
+                <mat-card-title>{{course.title}}</mat-card-title>
+              </mat-card-header>
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+              <mat-card-content>
+                <p>
+                {{course.description}}
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>Edit</button>
+              </mat-card-actions>
+            </mat-card>
+      </div>
+  </div>
+</div>

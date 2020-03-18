@@ -8,7 +8,13 @@ import { map, flatMap, mergeMap } from 'rxjs/operators';
 })
 export class InstructorBackendService {
 
+  private url: string = "http://localhost:3000/api";
+
   constructor(public http: HttpClient) { }
+
+  public getByUserId(userId): Observable<InstructorCourses[]> {
+    return this.http.get<InstructorCourses[]>(this.url + `/courses/byuser/${userId}`);
+  }
 
   public getAllCourses() {
     let onlineUsers = this.http.get('http://localhost:3000/api/courses/')
@@ -26,4 +32,21 @@ export class InstructorBackendService {
     
     return cachedUsers;
   }
+}
+
+export interface InstructorCourses{
+  fullName: string;
+  courses: Course[];
+}
+
+export interface Course{
+  title: string;
+  category: string;
+  level: string;
+  prerequisites: string;
+  image: string;
+  topic: string;
+  description: string;
+  published: boolean;
+  lectures: [];
 }

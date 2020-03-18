@@ -18,7 +18,7 @@ import { NavComponent } from './nav/nav.component';
 import { SignupComponent } from './signup/signup.component';
 
 const MY_ROUTES : Routes = [
-  { path: 'courses', loadChildren: () => import('./instructors/instructors.module').then(m => m.InstructorsModule) },
+  { path: 'instructor', loadChildren: () => import('./instructors/instructors.module').then(m => m.InstructorsModule) },
   // { path: '**', component: FriendlyErrorComponent }
   // { path: 'friendlyError', redirectTo: '/friendlyError' }
 ];
