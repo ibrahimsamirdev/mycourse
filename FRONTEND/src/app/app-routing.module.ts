@@ -22,11 +22,11 @@ const routes: Routes = [
     path: "login",
     component: LoginComponent
   },
-  {
-    path: "mycourses",
-    component: LoginComponent,
-    canActivate: [AuthGuard],
-  },
+  // {
+  //   path: "mycourses",
+  //   component: LoginComponent,
+  //   canActivate: [AuthGuard],
+  // },
   {
     path: "home/courseinfo/:id",
     component: CourseinfoComponent
