@@ -16,10 +16,10 @@
         <li class="nav-item" *ngIf="!user">
             <a class="nav-link" routerLink="signup">Signup</a>
         </li>
-        <li class="nav-item" *ngIf="!user">
+        <li class="nav-item" *ngIf="user">
           <a class="nav-link" [routerLink]="['instructor']">Instructor</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user">
           <a class="nav-link" [routerLink]="['mycourses']">My Courses</a>
         </li>
         <li class="nav-item" *ngIf="user">
