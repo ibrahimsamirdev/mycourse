@@ -11,7 +11,7 @@ const getById = async (req, res) => {
 }
 
 const add = async (req, res) => {
-    await enrollsService.add(req.params.uid, req.body)
+    await enrollsService.add(req.params.uid, req.params.id)
     res.status(200).json({ success: 1 });
 }
 

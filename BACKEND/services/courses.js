@@ -6,6 +6,8 @@ function getAll(req, res) {
 }
 
 function getByUserId(req, res) {
+    console.log('Get courses by user ID ');
+    // console.dir(req.params.user_id);
     return coursesDao.getByUserId(req.params.user_id);
 }
 

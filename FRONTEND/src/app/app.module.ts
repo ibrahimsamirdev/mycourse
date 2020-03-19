@@ -18,8 +18,8 @@ import { NavComponent } from './nav/nav.component';
 import { SignupComponent } from './signup/signup.component';
 import { CourseinfoComponent } from './courseinfo/courseinfo.component';
 
-const MY_ROUTES: Routes = [
-  { path: 'courses', loadChildren: () => import('./instructors/instructors.module').then(m => m.InstructorsModule) },
+const MY_ROUTES : Routes = [
+  { path: 'instructor', loadChildren: () => import('./instructors/instructors.module').then(m => m.InstructorsModule) },
   { path: 'mycourses', loadChildren: () => import('./student/student.module').then(m => m.StudentModule) }
   // { path: '**', component: FriendlyErrorComponent }
   // { path: 'friendlyError', redirectTo: '/friendlyError' }

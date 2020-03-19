@@ -8,8 +8,8 @@ function getById(userId, courseId) {
     return enrollsDao.getById(userId, courseId);
 }
 
-function add(userId, course) {
-    return enrollsDao.add(userId, course);
+function add(userId, courseId) {
+    return enrollsDao.add(userId, courseId);
 }
 
 function del(userId, courseId) {
