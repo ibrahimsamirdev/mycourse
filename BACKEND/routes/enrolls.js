@@ -6,7 +6,7 @@ router.get('/:uid', enrolls.getAll);
 
 router.get('/:uid/:id', enrolls.getById);
 
-router.post('/:uid', enrolls.validateInput, enrolls.add);
+router.post('/:uid/:id', enrolls.validateInput, enrolls.add);
 
 router.delete('/:uid/:id', enrolls.del);
 
