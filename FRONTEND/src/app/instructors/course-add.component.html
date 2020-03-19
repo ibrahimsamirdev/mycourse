@@ -1,1 +1,55 @@
-<p>course-add works!</p>
+<div class="container">
+    <mat-card class="form-card">
+        <form [formGroup]="courseForm" (ngSubmit)="saveCourse()">
+        <mat-card-header>
+            <mat-card-title>Add Course</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+                <label>Title</label>
+                <input formControlName="titleFormControl" class="mat-form-field">
+                <!-- <mat-error *ngIf="form.controls.titleFormControl.invalid">Please Enter Title</mat-error> -->
+
+            
+            
+                <label>Category</label>
+                <input formControlName="categoryFormControl" class="mat-form-field">
+                <!-- <mat-error *ngIf="form.controls.categoryFormControl.invalid">Please Enter Category</mat-error> -->
+
+            
+            
+                <label>Level</label>
+                <input formControlName="levelFormControl" class="mat-form-field">
+                <!-- <mat-error *ngIf="form.controls.levelFormControl.invalid">Please Valid Level</mat-error> -->
+
+            
+            
+                <label>Prerequisites</label>
+                <input formControlName="prerequisitesFormControl" class="mat-form-field">
+                <!-- <mat-error *ngIf="form.controls.prerequisitesFormControl.invalid">Please Enter Prerequisites</mat-error> -->
+
+            
+            
+                <label>Course Image</label>
+                <!-- <input formControlName="imageFormControl" /> -->
+                <input formControlName="imageFormControl" type="file"  accept=".png,.jpeg,.jpg" class="mat-form-field">
+                <!-- <mat-error *ngIf="form.controls.imageFormControl.invalid">Please Enter Picture</mat-error> -->
+            
+            
+            
+                <label>Topic</label>
+                <input formControlName="topicFormControl" class="mat-form-field">
+                <!-- <mat-error *ngIf="form.controls.topicFormControl.invalid">Please Enter Topic</mat-error> -->
+
+            
+            
+                <label>Description</label>
+                <textarea  formControlName="descriptionFormControl" class="mat-form-field"></textarea>
+                <!-- <mat-error *ngIf="form.controls.descriptionFormControl.invalid">Please Enter Description</mat-error> -->
+            
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button type="submit" color="primary" [disabled]="!courseForm.valid">Create Course</button>
+        </mat-card-actions>
+    </form>
+    </mat-card>
+</div>
