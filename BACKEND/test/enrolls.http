@@ -1,27 +1,13 @@
-GET http://localhost:3000/api/enrolls/5e6f3754cf73221a0c13dd94
+GET http://localhost:3000/api/enrolls/5e7371b4d80dd980c3ec0038
 
 ###
-GET http://localhost:3000/api/enrolls/5e6f3754cf73221a0c13dd94/5e6f3754cf73221a0c13dd91
+GET http://localhost:3000/api/enrolls/5e7371b4d80dd980c3ec0038/5e7371b42243e526f0e3d62c
 
 ###
-POST http://localhost:3000/api/enrolls/5e6f3754cf73221a0c13dd94/
-content-type: application/json
+POST http://localhost:3000/api/enrolls/5e7371b4d80dd980c3ec0038/5e7371b42243e526f0e3d614/
 
-{   
-    "_id": "5e6eeddf6b08d91dd4b7e4b2",
-    "title": "MPP", 
-    "category": "modern",
-    "level": "basic",
-    "prerequisites": "none",
-    "image": "",
-    "topic": "java, polymorphisms",
-    "description": "Modern Programming Practices",
-    "published": true,
-    "lectures": []
-}
+###
+PATCH http://localhost:3000/api/enrolls/5e7371b4d80dd980c3ec0038/5e7371b42243e526f0e3d614/5e7371b42243e526f0e3d615
 
 ###
 DELETE http://localhost:3000/api/enrolls/5e6f3754cf73221a0c13dd94/5e6f3d7b069b4f1beca744fa
-
-###
-PATCH http://localhost:3000/api/enrolls/5e6f3754cf73221a0c13dd94/5e6f3754cf73221a0c13dd91/5e6f3754cf73221a0c13dd93
