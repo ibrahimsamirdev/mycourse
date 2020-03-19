@@ -1,4 +1,4 @@
-POST http://localhost:3000/api/courses/add/5e6d4fc149864f1094ab8ef0 HTTP/2
+POST http://localhost:3000/api/courses/add/5e7002bd57942111b40f71e7 HTTP/2
 Accept: application/json
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 

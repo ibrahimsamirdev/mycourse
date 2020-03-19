@@ -1,9 +1,8 @@
-.home-welcome{
+.course-info{
     display: flex;
     text-align: center;
     overflow: hidden;
-    background-color: darkslategrey;
-    color: lightgray;
+    color: rgb(0, 0, 0);
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
 }
@@ -18,7 +17,4 @@
 .container{
     padding-top: 20px;
     margin-bottom: 80px;
-}
-.course-card{
-    padding-top: 20px;
 }

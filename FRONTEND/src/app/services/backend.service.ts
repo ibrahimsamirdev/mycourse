@@ -18,7 +18,9 @@ export class BackendService {
   getCourses(): Observable<Courses[]>{
     return this.http.get<Courses[]>(this.url + "courses");
   }
-
+  getCoursesInfo(courseid): Observable<Courses>{
+    return this.http.get<Courses>(this.url + "courses/findOne/"+courseid);
+  }
 }
 
 export interface Courses{
