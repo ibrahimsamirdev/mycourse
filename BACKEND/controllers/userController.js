@@ -1,4 +1,5 @@
 const userService = require('../services/userService');
+const jwtToken = require('../libs/auth');
 
 const login = async (req, res) => {
     const user = await userService.getByEmail(req.body.email)
