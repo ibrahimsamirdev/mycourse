@@ -1,1 +1,33 @@
-<p>lecture-add works!</p>
+<div class="container">
+    <mat-card class="form-card">
+        <form [formGroup]="lectureForm" (ngSubmit)="saveLecture()">
+        <mat-card-header>
+            <mat-card-title>Add Lecture</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+                <label>Title</label>
+                <input formControlName="titleFormControl" class="mat-form-field">
+                <!-- <mat-error *ngIf="form.controls.titleFormControl.invalid">Please Enter Title</mat-error> -->
+
+                <label>Description</label>
+                <input formControlName="descriptionFormControl" class="mat-form-field">
+                <!-- <mat-error *ngIf="form.controls.categoryFormControl.invalid">Please Enter Category</mat-error> -->
+                        
+                <label>Lecture Video</label>
+                <!-- <input formControlName="imageFormControl" /> -->
+                <input formControlName="videoFormControl" type="file"  accept=".mp4" class="mat-form-field">
+                <!-- <mat-error *ngIf="form.controls.imageFormControl.invalid">Please Enter Picture</mat-error> -->
+            
+                <label>Lecture Resources</label>
+                <!-- <input formControlName="imageFormControl" /> -->
+                <input formControlName="resourcesFormControl" type="file"  accept=".mp4" class="mat-form-field">
+                <!-- <mat-error *ngIf="form.controls.topicFormControl.invalid">Please Enter Topic</mat-error> -->
+            
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button type="submit" color="primary" [disabled]="!lectureForm.valid">Create Lecture</button>
+        </mat-card-actions>
+    </form>
+    </mat-card>
+</div>
+

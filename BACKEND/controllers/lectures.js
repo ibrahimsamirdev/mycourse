@@ -25,6 +25,8 @@ const add = async (req, res, next) => {
     }
 
     try {
+        console.log('Adding lecture');
+        // console.log(req);
         const result = await lecturesService.add(req, res)
         res.status(200).send(result);}
     catch (err) {

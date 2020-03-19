@@ -15,6 +15,9 @@ function getById(id) {
 }
 
 function add(req) {
+    console.log('IN DAO');
+    console.dir(req.body);
+    console.log(req.params.course_id);
     const newLecture = new lecturesModel({ _id: mongoose.Types.ObjectId(), ...req.body } ) ;
     const courseId = req.params.course_id;
 
