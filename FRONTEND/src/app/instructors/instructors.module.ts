@@ -12,8 +12,8 @@ import { LectureEditComponent } from './lecture-edit.component';
 
 const MY_ROUTES: Routes = [
   {path: '', component: InstructorsComponent},
-  // {path: ':uuid', component: UserdetailsComponent, canActivate: [CorrectParamGuardService]}
-];
+  {path: 'addCourse/:uuid', component: CourseAddComponent }
+  ];
 
 @NgModule({
   declarations: [
