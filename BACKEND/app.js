@@ -35,6 +35,7 @@ app.use('/', express.static('public'));
 app.use('/api/lectures', lecturesRouter);
 app.use('/api/courses', coursesRouter);
 app.use('/api/enrolls', enrollsRouter);
+app.use('/api/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
