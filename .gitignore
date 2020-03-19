@@ -106,5 +106,4 @@ dist
 # Development and test
 .env
 testFiles/
-assets/
 
