@@ -44,3 +44,11 @@ body {
     padding: 25px 0 25px 50px;
     margin-bottom: 30px;
 }
+
+.course-player-container {
+    height: 600px;
+}
+
+.course-player-container .mat-nav-list {
+    max-width: 320px;
+}

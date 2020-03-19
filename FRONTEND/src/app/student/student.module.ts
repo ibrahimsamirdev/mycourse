@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatChipsModule } from '@angular/material/chips';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatButtonModule,
     MatCardModule,
     MatChipsModule,
+    MatSidenavModule,
+    MatListModule,
     RouterModule.forChild([
       { path: '', component: MycoursesComponent },
       { path: 'course/:id', component: CourseComponent, children: [{ path: ':lid', component: LecturesComponent }] },
