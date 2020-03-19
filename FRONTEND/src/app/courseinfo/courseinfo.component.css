@@ -1,0 +1,20 @@
+.course-info{
+    display: flex;
+    text-align: center;
+    overflow: hidden;
+    color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+.welcome-message{
+    font-size: 70px;
+    padding-top: 109px;
+    letter-spacing: normal;
+    line-height: normal;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+.container{
+    padding-top: 20px;
+    margin-bottom: 80px;
+}
