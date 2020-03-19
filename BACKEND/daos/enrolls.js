@@ -2,8 +2,8 @@ const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectID;
 const dotenv = require('dotenv');
 dotenv.config();
-// const uri = `mongodb+srv://${process.env.DB_USER2}:${process.env.DB_PASS2}@cluster0-h0omh.mongodb.net/test?retryWrites=true&w=majority`;
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-seryv.gcp.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER2}:${process.env.DB_PASS2}@cluster0-h0omh.mongodb.net/test?retryWrites=true&w=majority`;
+// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-seryv.gcp.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true });
 let collection = null;
 client.connect(function (err) {
@@ -17,8 +17,8 @@ client.connect(function (err) {
  * Get all enrolled courses by userId
  */
 function getAll(uid) {
-    // return collection.find({ _id: ObjectId(uid) }, { projection: { enrolled: 1 } }).toArray();
-    return collection.find().toArray();
+    return collection.find({ _id: ObjectId(uid) }, { projection: { enrolled: 1 } }).toArray();
+    // return collection.find().toArray();
 }
 /**
  * Get one enrolled course by userId and courseId

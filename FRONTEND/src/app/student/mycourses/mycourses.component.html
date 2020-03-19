@@ -1,5 +1,27 @@
-<p>mycourses works!</p>
-<ul>
-    <li><a [routerLink]="['course',2]">course 1</a></li>
-    <li><a [routerLink]="['/login']">login</a></li>
-</ul>
+<div class="page-header">
+    My courses
+</div>
+<div class="container courses-container">
+    <div class="row">
+        <div class="col-md-4 course-card" *ngFor="let course of courses">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{course.title}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="{{course.image}}">
+                <mat-card-content>
+                    <p>
+                        {{course.topic}}
+                    </p>
+                    <mat-chip-list>
+                        <mat-chip> {{course.category}}</mat-chip>
+                        <mat-chip> {{course.level}}</mat-chip>
+                    </mat-chip-list>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a mat-flat-button color="primary" [routerLink]="['course',2]">Continue</a>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
