@@ -4,9 +4,15 @@
 <mat-drawer-container class="course-player-container">
     <mat-drawer mode="side" opened>
         <mat-nav-list>
-            <a mat-list-item [routerLink]="lecture._id" *ngFor="let lecture of course.lectures"> {{ lecture.title }}
+            <a mat-list-item [routerLink]="lecture._id" *ngFor="let lecture of course.lectures, let i=index"> {{i+1}}.
+                {{ lecture.title }}
             </a>
         </mat-nav-list>
     </mat-drawer>
-    <mat-drawer-content>Main content</mat-drawer-content>
+    <mat-drawer-content>
+        <video width="800" controls>
+            <source src="/assets/video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </mat-drawer-content>
 </mat-drawer-container>

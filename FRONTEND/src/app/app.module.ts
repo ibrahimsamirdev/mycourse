@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { SignupComponent } from './signup/signup.component';
+import { CourseinfoComponent } from './courseinfo/courseinfo.component';
 
 const MY_ROUTES : Routes = [
   { path: 'instructor', loadChildren: () => import('./instructors/instructors.module').then(m => m.InstructorsModule) },
@@ -30,7 +31,8 @@ const MY_ROUTES : Routes = [
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    NavComponent
+    NavComponent,
+    CourseinfoComponent
   ],
   imports: [
     BrowserModule,

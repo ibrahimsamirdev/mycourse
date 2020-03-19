@@ -1,7 +1,7 @@
 <div class="home-welcome">   
         <div class="col-md-4">
-            <div class="welcome-message">Welcome To Mycourse</div><br>
-            <p>Mycourse is a free learning website with the mission to provide a free, 
+            <div class="welcome-message">Welcome To myCourse</div><br>
+            <p>myCourse is a free learning website with the mission to provide a free, 
               world-class education for anyone, anywhere. </p>
         </div>
         <div class="col-md-9">
@@ -10,32 +10,23 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-4 course-card" *ngFor="let course of coursesToDisplay">
+        <div class="col-md-4 course-card" *ngFor="let course of coursesToDisplay | slice:0:9">
             <mat-card>
                 <mat-card-header>
                   <mat-card-title>{{course.title}}</mat-card-title>
                 </mat-card-header>
+               <!-- <a [routerLink]="['courseinfo',courseinfo.id.value]"><img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"></a> -->
                 <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+                <!-- <img mat-card-image src="{{course.image}}"> -->
                 <mat-card-content>
                   <p>
                   {{course.description}}
                   </p>
                 </mat-card-content>
-                <mat-card-actions>
+                <!-- <mat-card-actions>
                   <button mat-button>Register</button>
-                </mat-card-actions>
+                </mat-card-actions> -->
               </mat-card>
         </div>
     </div>
 </div>
-<footer class="footer" style=" padding: 1.5rem 0;
-                                    color: #999;
-                                    background-color: #f9f9f9;
-                                    bottom: 0;
-                                    position: relative;
-                                    text-align: center;
-                                    width: 100%;                                   
-                                    border-top: .05rem solid #e5e5e5;">
-    <pre style="margin: 0; font-size: medium;font-family: 'Times New Roman', Times, serif;">    
-        Copyright © 2020 Mycourse          Contact Us:     Email:mycourse@gmail.com         Phone: +1(641) 552-4586</pre>
-</footer>

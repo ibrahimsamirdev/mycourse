@@ -9,7 +9,8 @@ import { BackendService, Courses, Course } from '../services/backend.service';
 export class HomeComponent implements OnInit {
   courses: Courses[] = [];
   coursesToDisplay: Course[] = [];
-  constructor(private backendService: BackendService) { }
+  constructor(private backendService: BackendService) { 
+  }
 
   ngOnInit(): void {
     this.backendService.getCourses().subscribe(result => {
@@ -17,7 +18,6 @@ export class HomeComponent implements OnInit {
       console.log(this.coursesToDisplay);
     })
   }
-
   private getCoursesToDisplay(courses: Courses[]){
     courses.forEach((userCourse: Courses) => {
       userCourse.courses.forEach(course => {

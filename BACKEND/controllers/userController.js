@@ -1,10 +1,15 @@
 const userService = require('../services/userService');
+const jwtToken = require('../libs/auth');
 
 const login = async (req, res) => {
     const user = await userService.getByEmail(req.body.email)
 
     if (user != null && user.password == req.body.password) {
-        res.status(200).send(user);
+        res.status(200).send({
+            token: jwtToken.createJWToken(user),
+            email: user.email,
+            password: user.password
+        });
     } else {
         res.status(401).send("Invalid username or password!");
     }
