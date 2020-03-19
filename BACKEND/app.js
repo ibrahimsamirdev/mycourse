@@ -31,8 +31,7 @@ const port = app.get('port');
 app.use(dbConn);
 
 // Define routes
-app.use('/', express.static('public'))
-app.use('/', indexRouter);
+app.use('/', express.static('public'));
 app.use('/api/lectures', lecturesRouter);
 app.use('/api/courses', coursesRouter);
 app.use('/api/enrolls', enrollsRouter);

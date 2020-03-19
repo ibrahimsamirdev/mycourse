@@ -8,7 +8,8 @@
 </div>
 <div>
   <mat-toolbar color="primary">
-    <button mat-raised-button color="primary" routerLink="/addCourse">Add Course</button>
+    <!-- <button mat-button routerLink="/addCourse">Add Course</button> -->
+    <button mat-button [routerLink]="['addCourse',user_id]">Add Course</button>
   </mat-toolbar>
 </div>
 <div class="container">
