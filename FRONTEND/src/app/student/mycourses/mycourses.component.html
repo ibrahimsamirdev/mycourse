@@ -4,7 +4,7 @@
 <div class="container courses-container">
     <div class="row">
         <div class="col-md-4 course-card" *ngFor="let course of courses">
-            <mat-card>
+            <mat-card [routerLink]="['course',course._id]">
                 <mat-card-header>
                     <mat-card-title>{{course.title}}</mat-card-title>
                 </mat-card-header>
@@ -19,7 +19,7 @@
                     </mat-chip-list>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a mat-flat-button color="primary" [routerLink]="['course',2]">Continue</a>
+                    <a mat-flat-button color="primary" [routerLink]="['course',course._id]">Continue</a>
                 </mat-card-actions>
             </mat-card>
         </div>

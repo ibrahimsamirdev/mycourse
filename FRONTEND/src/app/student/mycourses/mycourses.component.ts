@@ -8,14 +8,14 @@ import { Subscription } from "rxjs";
   styleUrls: ['./mycourses.component.css']
 })
 export class MycoursesComponent implements OnInit {
-  public courses = [];
   private subscription: Subscription;
+  public courses = [];
   constructor(public studentsService: StudentsService) { }
 
   ngOnInit(): void {
     this.subscription = this.studentsService.getAllEnrolls(10).subscribe((courses) => {
       this.courses = courses[0] ? courses[0].enrolled : ""
-      console.log(this.courses);
+      // console.log(this.courses);
     });
   }
 

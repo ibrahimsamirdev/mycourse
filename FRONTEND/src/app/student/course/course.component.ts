@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { StudentsService } from '../student.service';
 
 @Component({
   selector: 'app-course',
@@ -10,12 +11,17 @@ import { ActivatedRoute } from '@angular/router';
 export class CourseComponent implements OnInit {
 
   private subscription: Subscription;
-  id;
+  public course;
+  public id;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, public studentsService: StudentsService) {
     this.subscription = activatedRoute.params.subscribe(
       (params: any) => this.id = params['id']
     );
+    this.subscription = this.studentsService.getEnrolledCourse(10, this.id).subscribe((course) => {
+      this.course = course.enrolled ? course.enrolled[0] : ""
+      console.log(this.course);
+    });
   }
 
   ngOnDestroy() {
