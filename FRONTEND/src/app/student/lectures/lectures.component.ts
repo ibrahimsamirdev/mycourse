@@ -28,7 +28,6 @@ export class LecturesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.studentService.dosome("Lecture")
   }
 
 }
