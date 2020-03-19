@@ -1,4 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.courses-container {
+    margin-bottom: 40px;
+}
+
+.courses-container .mat-card {
+    margin-top: 25px;
+}
+
+.courses-container .mat-card-header-text {
+    margin: 0;
+}
+
+.courses-container .mat-card-actions {
+    margin: -10px 0 0 0 !important;
+}
+
+.courses-container .mat-card-actions a {
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.page-header {
+    background-color: #146384;
+    font-size: 50px;
+    line-height: normal;
+    font-family: tim;
+    color: #fff;
+    padding: 25px 0 25px 50px;
+    margin-bottom: 30px;
+}
