@@ -7,6 +7,7 @@ const login = async (req, res) => {
     if (user != null && user.password == req.body.password) {
         res.status(200).send({
             token: jwtToken.createJWToken(user),
+            id: user._id,
             email: user.email,
             password: user.password
         });

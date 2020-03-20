@@ -7,11 +7,11 @@ dotenv.config();
 const uri = `mongodb+srv://mcuser:mcu1234@cluster0-h0omh.mongodb.net/test?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true });
 let collection = null;
-client.connect(function (err) {
-    if (err) throw err;
-    collection = client.db('mycourse').collection('users');
-    console.log("******** Connected to DB **********");
-});
+// client.connect(function (err) {
+//     if (err) throw err;
+//     collection = client.db('mycourse').collection('users');
+//     console.log("******** Connected to DB **********");
+// });
 
 
 /**

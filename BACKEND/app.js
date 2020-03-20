@@ -32,7 +32,7 @@ app.use(dbConn);
 
 // Define routes
 app.use('/', express.static('public'))
-app.use('/api/lectures', verifyJWT_MW,lecturesRouter);
+app.use('/api/lectures', lecturesRouter);
 app.use('/api/courses', coursesRouter);
 app.use('/api/enrolls', verifyJWT_MW, enrollsRouter);
 app.use('/api/user', userRouter);
