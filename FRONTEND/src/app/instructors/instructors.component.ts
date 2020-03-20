@@ -59,14 +59,14 @@ export class InstructorsComponent implements OnInit {
   user: User;
   
   public user_id = '';
-  
-
   constructor(
     private service: InstructorBackendService, 
     private router: Router,
     private authenticationService: AuthenticationService ) { 
     this.authenticationService.currentUser.subscribe(user=> this.user = user)
-    this.user_id = this.user['_id'];
+    this.user_id = <string>this.user['id'];
+    // console.log('kjasdfjlk;afdsl;jkafljk;af');
+    console.log(this.user_id);
   }
 
   ngOnInit() {

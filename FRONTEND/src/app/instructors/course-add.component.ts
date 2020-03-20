@@ -25,7 +25,7 @@ export class CourseAddComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService ) {
       this.authenticationService.currentUser.subscribe(user=> this.user = user)
-      this.user_id = this.user['_id'];
+      this.user_id = <string>this.user['id'];
 
       this.courseForm = fb.group({
         titleFormControl : new FormControl('', [Validators.required] ),
